@@ -86,3 +86,35 @@ in SWMA.py
 #### Solution:
 
 in MKEQ.py
+
+### Question 5
+
+[Good binary string](https://www.codechef.com/problems/GDST)
+
+#### Explanation:
+
+    from given condition it is evident that pi can be 00 or 11 atleast .if 0000 it can be
+    divided into 00 00 i.e p1 and p2 of length 2. so every pi has a length 2
+
+    if arr[i] == arr[i-1] no need to do anything 1 <=i < n (zero indexing)
+
+    if not equal means arr[i-1],arr[i]  is 0 1 or 1 0
+
+    store the index i in q queue we need to select an alternating subsequence
+
+    so to do this 0 1 is one part and in the array in some othe place 1 0 is present
+    no we selct 1 from 1st part and 0 from 2nd part and apply the operation
+    therefore after applying operation it becomes 00 and 11
+
+    we are storing the indices in a list to print them.
+
+    when storing in the queue if 0 is prev one then the condition arr[i-1] and arr[i]
+    is not equal but arr[i]  is 0 then you need to take arr[i-1] (i.e 1 ) as subsequence.
+
+        Ex:- 101001  ---- > 2 3 5
+
+    there will be no case for not having a subsequence. cant write in words .
+
+#### Solution:
+
+in GDST.py
