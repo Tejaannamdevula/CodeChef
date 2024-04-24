@@ -89,6 +89,8 @@ in MKEQ.py
 
 ### Question 5
 
+#### not done during live
+
 [Good binary string](https://www.codechef.com/problems/GDST)
 
 #### Explanation:
@@ -113,8 +115,84 @@ in MKEQ.py
 
         Ex:- 101001  ---- > 2 3 5
 
-    there will be no case for not having a subsequence. cant write in words .
+    there will be no case for not having a subsequence. cant write in words
 
 #### Solution:
 
 in GDST.py
+
+### Question 6
+
+#### not done during live
+
+[Updating A](https://www.codechef.com/problems/UPDA)
+
+#### Explanation:
+
+    alice want to maximize the total.alice uses absolute value i.e takes makes sum+ve even if the sum is -ve.
+
+    bob wants to minimize the total and he uses on sum.
+
+
+    first case if all elements are +ve in array both alice and bob has same answer.
+    bob cannot minimize the sum .
+
+    second case :- if there are -ve numbers
+        selecting string :- 1<=L<R<=M
+        so minimum sub string length is two .
+        so the process of alice and bob continues till two
+
+    alice finds the substring with minimum sum and makes it postive and inserts the positive sum in array to maximize.
+
+    in bob turn bob finds the substring with minimum sum adds and inserts the
+    -ve value in the array to minimize.
+
+    but here is trick when bob turn he does the sum of entire array and ends the game because
+        1. if all +ve there  bob cannot minimize
+        2. if there are -ve
+            to minimize bob want to include all -ve numbers in sum .and also bob dont give a chanve to alice
+                Ex :- -1 -2 -3 -4  5 6 7 8
+                bobs turn  -10 5 6 7 8
+                if he gave alice a chance alice can increase total sum by
+                    making (-10 +5 ) as 5 and 5 5 6 7 8 then answer is 5+5+6+7+8 = 31.
+
+                to avoid this risk bob adds entire arrayso he surely gets the value of all -ve numbers. (-1 -2 -3 -4 +5+ 6+7+8) = 16 and minimizes.
+    so alice has only one chance to increase sum because bob ends the game as soon as he gets chance.
+
+    alice:- finds the sub string with minimum total sum and make it positive.
+
+    we need to apply kadanes algorithm here (its used to find sub string with maximum sum ) but here we need to reverse the logic to find minimum.
+    kadanes algo finds in minimum time .  but Kadanes will give length = 1 subarray also.so we need to implement kadanes algorithm with atleast 2 length subarray .
+
+    for this we use sliding window + kadanes algo links below.
+
+---
+
+    Now we get minimum sum subarray values
+    now if we make this positive  and caluculate rest of summ and add this
+
+    insted of that we can directly get sum = sum+ 2*(abs(min(0,minimum_subarray_sum)))
+
+    0 is included if minimum subarray sum is +ve then we will be adding twice so for that case we are making it 0 by adding min(0,minimum_subarray_sum)
+
+#### learn dp for this
+
+[resources for kadanes](https://medium.com/@rsinghal757/kadanes-algorithm-dynamic-programming-how-and-why-does-it-work-3fd8849ed73d)
+
+[resource for kadanes+ slidingwindow](https://www.youtube.com/watch?v=OodoQ95se20)
+
+#### Solution:
+
+in UPDA.py
+
+### Question 5
+
+#### not done during live
+
+[Costly Swapping](https://www.codechef.com/problems/COSS)
+
+#### Explanation:
+
+#### Solution:
+
+in COSS.py

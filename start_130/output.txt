@@ -1,5 +1,17 @@
-zzzzrr 1
-trrrrr 3
-trrrrr 5
-3
-2 3 5
+window sum -4
+window -1
+curr -6
+window 3
+curr -1
+window 3
+curr -3
+window -3
+curr -4
+window 4
+curr 1
+window 2
+curr -2
+my_sum -6
+my answer 10
+yt_sum 10
+yt answer 18
